@@ -1,4 +1,4 @@
-package section02.lambda.dambda1;
+package section02.lambda.lambda1;
 
 import section02.lambda.MyFunction;
 
