@@ -21,7 +21,7 @@ public class ReduceExample {
         // 1. 합 구하기 (초기값 0, 덧셈 로직)
         int sum = reduce(numbers, 0, (a, b) -> a + b);
         System.out.println("합(누적 +): " + sum);
-        
+
         // 2. 곱 구하기 (초기값 1, 곱셈 로직, 람다로 작성)
         int product = reduce(numbers, 1, (a, b) -> a * b);
         System.out.println("곱(누적 *): " + product);
