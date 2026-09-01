@@ -12,17 +12,17 @@ public class MyStreamV1Main {
     }
 
     private static void returnValue(List<Integer> numbers) {
-        MySteamV1 stream = new MySteamV1(numbers);
+        MyStreamV1 stream = new MyStreamV1(numbers);
 
-        MySteamV1 filteredStream = stream.filter(n -> n % 2 == 0);
+        MyStreamV1 filteredStream = stream.filter(n -> n % 2 == 0);
         System.out.println("filteredStream = " + filteredStream.toList());
 
-        MySteamV1 mappedStream = filteredStream.map(n -> n * 2);
+        MyStreamV1 mappedStream = filteredStream.map(n -> n * 2);
         System.out.println("mappedStream = " + mappedStream.toList());
     }
 
     private static void methodChain(List<Integer> numbers) {
-        List<Integer> result = new MySteamV1(numbers).filter(n -> n % 2 == 0).map(n -> n * 2).toList();
+        List<Integer> result = new MyStreamV1(numbers).filter(n -> n % 2 == 0).map(n -> n * 2).toList();
         System.out.println("result = " + result);
     }
 }

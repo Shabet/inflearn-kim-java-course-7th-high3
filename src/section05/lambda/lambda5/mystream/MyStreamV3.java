@@ -7,20 +7,20 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 // Generic 추가
-public class MySteamV3<T> {
+public class MyStreamV3<T> {
 
     private List<T> internalList;
 
-    private MySteamV3(List<T> internalList) {
+    private MyStreamV3(List<T> internalList) {
         this.internalList = internalList;
     }
 
     // static factory
-    public static <T> MySteamV3<T> of(List<T> internalList) {
-        return new MySteamV3<>(internalList);
+    public static <T> MyStreamV3<T> of(List<T> internalList) {
+        return new MyStreamV3<>(internalList);
     }
 
-    public MySteamV3<T> filter(Predicate<T> predicate) {
+    public MyStreamV3<T> filter(Predicate<T> predicate) {
       List<T> filtered = new ArrayList<>();
       for (T element : internalList) {
           if (predicate.test(element)) {
@@ -28,16 +28,16 @@ public class MySteamV3<T> {
           }
       }
 //      return new MySteamV3<>(filtered); // 동일한 코드임.
-      return MySteamV3.of(filtered);
+      return MyStreamV3.of(filtered);
     }
     
-    public <R> MySteamV3<R> map(Function<T, R> mapper) {
+    public <R> MyStreamV3<R> map(Function<T, R> mapper) {
         List<R> mapped = new ArrayList<>();
         for (T element : internalList) {
             mapped.add(mapper.apply(element));
         }
 //        return new MySteamV3<>(mapped); // 동일한 코드임.
-        return MySteamV3.of(mapped);
+        return MyStreamV3.of(mapped);
     }
 
     public List<T> toList() {
@@ -49,5 +49,10 @@ public class MySteamV3<T> {
         for (T element : internalList) {
             consumer.accept(element);
         }
+    }
+
+    // 추가
+    public T getFirst() {
+        return internalList.get(0);
     }
 }

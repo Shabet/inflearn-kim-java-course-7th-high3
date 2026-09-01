@@ -22,14 +22,14 @@ public class MyStreamV3Main {
     }
 
     private static List<String> ex1(List<Student> students) {
-        return MySteamV3.of(students)
+        return MyStreamV3.of(students)
                 .filter(s -> s.getScore() >= 80)
                 .map(s -> s.getName())
                 .toList();
     }
 
     private static List<String> ex2(List<Student> students) {
-        return MySteamV3.of(students)
+        return MyStreamV3.of(students)
                 .filter(s -> s.getScore() >= 80)
                 .filter(s -> s.getName().length() == 5)
                 .map(s -> s.getName())

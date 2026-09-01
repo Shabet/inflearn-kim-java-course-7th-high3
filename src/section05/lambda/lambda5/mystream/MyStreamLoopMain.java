@@ -13,7 +13,7 @@ public class MyStreamLoopMain {
         );
 
         // 점수가 80점 이상한 학생의 이름을 추출해라.
-        List<String> result = MySteamV3.of(students)
+        List<String> result = MyStreamV3.of(students)
                 .filter(s -> s.getScore() >= 80)
                 .map(s -> s.getName())
                 .toList();
@@ -24,7 +24,7 @@ public class MyStreamLoopMain {
         }
 
         // 추가
-        MySteamV3.of(students)
+        MyStreamV3.of(students)
                 .filter(s -> s.getScore() >= 80)
                 .map(s -> s.getName())
                 .forEach(name -> System.out.println("name: " + name));
